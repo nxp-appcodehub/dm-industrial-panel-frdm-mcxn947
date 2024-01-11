@@ -1,0 +1,35 @@
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="dm-industrial-panel-frdm-mcxn947" type="demo" format="projectfile" versionSchema="1.0.0" name="Industrial Panel FRDM-MCXN947">
+    <display_title>
+        Industrial Panel FRDM-MCXN947
+    </display_title>
+    <overview>
+        <![CDATA[This demo demostrate capabilities of new FRDM-MCXN947. With only one core, the demo run motor control, lvgl, server, two temperature sensors, touch sensitive and get core performance.<br />]]>
+    </overview>
+    <toolchains>
+        <toolchain name="mcux"></toolchain>
+        <toolchain name="vscode"></toolchain>
+    </toolchains>
+    <families>
+        <family name="mcx"></family>
+    </families>
+    <nxp_compatible_hw>
+        <hw id="FRDM-MCXN947"></hw>
+    </nxp_compatible_hw>
+    <nxp_ebh_hw>
+        <ebh id="nxp_frdm_mc_lvpmsm"></ebh>
+    </nxp_ebh_hw>
+    <peripherals>
+        <peripheral name="adc"></peripheral>
+        <peripheral name="pwm"></peripheral>
+        <peripheral name="uart"></peripheral>
+        <peripheral name="timer"></peripheral>
+        <peripheral name="i2c"></peripheral>
+        <peripheral name="ethernet"></peripheral>
+    </peripherals>
+    <categories>
+        <category name="graphics"></category>
+        <category name="industrial"></category>
+        <category name="motor_control"></category>
+        <category name="sensor"></category>
+    </categories>
+</data:item>

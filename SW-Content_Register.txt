@@ -1,0 +1,11 @@
+Release Name: 		FRDM-MCXN947 Industrial Panel Demo
+Release Version: 	1.0
+Package License: 	LA_OPT_NXP_Software_License v53 December 2023 - Additional Distribution License granted, license in Section 2.3 applies
+License in File: 	Licence.txt
+Description: 		This demo simulate an industrial panel with motor control, lvgl, temperature sensors, touch sensors, calculate cpu performance and use FreeRTOS.
+Release location: 	https://github.com/nxp-appcodehub/rt1170evkb_full_appliance_demo
+Origin: 		NXP LA_OPT_NXP_Software_License
+			NXP (BSD-3-clause)
+			ARM CMSIS (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/releases/tag/5.8.0      
+			lvgl (MIT) - https://github.com/lvgl/lvgl
+			FreeRTOS (MIT) - https://github.com/FreeRTOS
