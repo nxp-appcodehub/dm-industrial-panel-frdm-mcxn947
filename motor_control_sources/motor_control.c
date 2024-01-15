@@ -1,8 +1,8 @@
 /*
- * motor_control.c
+ * Copyright 2024 NXP
+ * All rights reserved.
  *
- *  Created on: Nov 21, 2023
- *      Author: nxg02659
+ * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include "motor_control.h"
