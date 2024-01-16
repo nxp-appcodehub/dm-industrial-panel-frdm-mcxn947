@@ -1,4 +1,4 @@
-Release Name: 		FRDM-MCXN947 Industrial Panel Demo
+Release Name: 		dm-mcxn-industrial-panel
 Release Version: 	1.0
 Outgoing License: 	LA_OPT_NXP_Software_License v53 December 2023 - Additional Distribution License granted, license in Section 2.3 applies
 License in File: 	Licence.txt
