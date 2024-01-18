@@ -25,8 +25,8 @@ This demo demostrate capabilities of new FRDM-MCXN947. With only one core, demo 
 7. [Release Notes](#step7)
 
 ## 1. Software<a name="step1"></a>
-- [MCUXpresso 11.7.1 or newer.](https://nxp.com/mcuxpresso)
-- [MCUXpresso for VScode 1.15 or newer](https://www.nxp.com/products/processors-and-microcontrollers/arm-microcontrollers/general-purpose-mcus/lpc800-arm-cortex-m0-plus-/mcuxpresso-for-visual-studio-code:MCUXPRESSO-VSC?cid=wechat_iot_303216)
+- [MCUXpresso 11.9.0 or newer.](https://nxp.com/mcuxpresso)
+- [MCUXpresso for VScode 1.5.61 or newer](https://www.nxp.com/products/processors-and-microcontrollers/arm-microcontrollers/general-purpose-mcus/lpc800-arm-cortex-m0-plus-/mcuxpresso-for-visual-studio-code:MCUXPRESSO-VSC?cid=wechat_iot_303216)
 - [SDK fot FRDM-MCXN947.](https://mcuxpresso.nxp.com/en/select)
 
 
