@@ -30,6 +30,7 @@
 
 #include "gui_guider.h"
 #include "fsl_gpio.h"
+#include "sensors.h"
 /*-----------------------------------------------------------
  * Application specific definitions.
  *

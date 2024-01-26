@@ -35,7 +35,7 @@
 
 void custom_init(lv_ui *ui)
 {
-	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview3, true);
+	lv_obj_set_tile(ui->screen_StationsView, ui->screen_StationsView_StationTileview3, LV_ANIM_OFF);
 	//lv_obj_set_tile_id(guider_ui.screen_StationsView, 2, 0, true);
 }
 

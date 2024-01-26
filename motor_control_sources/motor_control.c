@@ -109,7 +109,7 @@ void motor_control_task()
 	        }
 
 	        g_sSpinMidSwitch.bCmdRunMid = FALSE;
-	        MID_Process_BL(&g_eMidCmd);
+	        MID_Process_BL((mid_app_cmd_t*)&g_eMidCmd);
 	        break;
 	  }
 }

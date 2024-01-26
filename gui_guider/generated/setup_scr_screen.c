@@ -12,6 +12,7 @@
 #include "widgets_init.h"
 #include "custom.h"
 #include "motor_control.h"
+#include "sensors.h"
 
 
 volatile static uint8_t g_temperature_c               = 0;
@@ -247,19 +248,19 @@ void setup_scr_screen(lv_ui *ui)
 
 	//Write style for screen, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->screen, lv_color_hex(0x0f0f0f), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->screen, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes screen_img_1
-	ui->screen_img_1 = lv_img_create(ui->screen);
-	lv_obj_add_flag(ui->screen_img_1, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->screen_img_1, &_Triangles175x175_alpha_100x100);
-	lv_img_set_pivot(ui->screen_img_1, 50,50);
-	lv_img_set_angle(ui->screen_img_1, 0);
-	lv_obj_set_pos(ui->screen_img_1, 0, 0);
-	lv_obj_set_size(ui->screen_img_1, 100, 100);
+	//Write codes screen_img_2
+	ui->screen_img_2 = lv_img_create(ui->screen);
+	lv_obj_add_flag(ui->screen_img_2, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->screen_img_2, &_NXP_Logo_RGB_Colour_alpha_100x50);
+	lv_img_set_pivot(ui->screen_img_2, 50,50);
+	lv_img_set_angle(ui->screen_img_2, 0);
+	lv_obj_set_pos(ui->screen_img_2, 366, 5);
+	lv_obj_set_size(ui->screen_img_2, 100, 50);
 
-	//Write style for screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_img_opa(ui->screen_img_1, 206, LV_PART_MAIN|LV_STATE_DEFAULT);
+	//Write style for screen_img_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->screen_img_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes screen_Date
 	ui->screen_Date = lv_label_create(ui->screen);
@@ -322,9 +323,9 @@ void setup_scr_screen(lv_ui *ui)
 	lv_obj_set_style_shadow_width(ui->screen_StationsView, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write style for screen_StationsView, Part: LV_PART_SCROLLBAR, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->screen_StationsView, 255, LV_PART_SCROLLBAR|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->screen_StationsView, lv_color_hex(0xeaeff3), LV_PART_SCROLLBAR|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->screen_StationsView, 0, LV_PART_SCROLLBAR|LV_STATE_DEFAULT);
+//	lv_obj_set_style_bg_opa(ui->screen_StationsView, 255, LV_PART_SCROLLBAR|LV_STATE_DEFAULT);
+//	lv_obj_set_style_bg_color(ui->screen_StationsView, lv_color_hex(0xeaeff3), LV_PART_SCROLLBAR|LV_STATE_DEFAULT);
+//	lv_obj_set_style_radius(ui->screen_StationsView, 0, LV_PART_SCROLLBAR|LV_STATE_DEFAULT);
 
 
 
@@ -338,7 +339,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_TittleLabel1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->screen_TittleLabel1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_TittleLabel1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->screen_TittleLabel1, lv_color_hex(0xe0b74f), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->screen_TittleLabel1, lv_color_hex(0xF9B500), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->screen_TittleLabel1, &lv_font_montserratMedium_20, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->screen_TittleLabel1, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->screen_TittleLabel1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -376,7 +377,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_TSISliderPos, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_arc_width(ui->screen_TSISliderPos, 20, LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_arc_opa(ui->screen_TSISliderPos, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_arc_color(ui->screen_TSISliderPos, lv_color_hex(0x628fb5), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_color(ui->screen_TSISliderPos, lv_color_hex(0x0EAFE0), LV_PART_INDICATOR|LV_STATE_DEFAULT);
 
 	//Write style for screen_TSISliderPos, Part: LV_PART_KNOB, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen_TSISliderPos, 0, LV_PART_KNOB|LV_STATE_DEFAULT);
@@ -392,7 +393,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_Position, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->screen_Position, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_Position, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->screen_Position, lv_color_hex(0x7EAFD7), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->screen_Position, lv_color_hex(0x0EAFE0), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->screen_Position, &lv_font_montserratMedium_20, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->screen_Position, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->screen_Position, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -474,7 +475,7 @@ void setup_scr_screen(lv_ui *ui)
 	lv_obj_set_style_shadow_width(ui->screen_TempCelsius, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write style for screen_TempCelsius, Part: LV_PART_TICKS, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_text_color(ui->screen_TempCelsius, lv_color_hex(0xE0B74F), LV_PART_TICKS|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->screen_TempCelsius, lv_color_hex(0xF9B500), LV_PART_TICKS|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->screen_TempCelsius, &lv_font_montserratMedium_14, LV_PART_TICKS|LV_STATE_DEFAULT);
 
 	//Write style for screen_TempCelsius, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
@@ -491,7 +492,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_TittleLabel2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->screen_TittleLabel2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_TittleLabel2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->screen_TittleLabel2, lv_color_hex(0xe0b74f), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->screen_TittleLabel2, lv_color_hex(0xF9B500), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->screen_TittleLabel2, &lv_font_montserratMedium_20, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->screen_TittleLabel2, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->screen_TittleLabel2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -513,7 +514,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_DCelsius, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->screen_DCelsius, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_DCelsius, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->screen_DCelsius, lv_color_hex(0x7EAFD7), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->screen_DCelsius, lv_color_hex(0x0EAFE0), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->screen_DCelsius, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->screen_DCelsius, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->screen_DCelsius, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -566,7 +567,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_DFahrenheit, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->screen_DFahrenheit, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_DFahrenheit, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->screen_DFahrenheit, lv_color_hex(0x7EAFD7), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->screen_DFahrenheit, lv_color_hex(0x0EAFE0), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->screen_DFahrenheit, &lv_font_montserratMedium_14, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->screen_DFahrenheit, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->screen_DFahrenheit, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -590,7 +591,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_TittleLabel3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->screen_TittleLabel3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_TittleLabel3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->screen_TittleLabel3, lv_color_hex(0xe0b74f), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->screen_TittleLabel3, lv_color_hex(0xF9B500), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->screen_TittleLabel3, &lv_font_montserratMedium_20, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->screen_TittleLabel3, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->screen_TittleLabel3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -630,7 +631,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_LVGL, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_arc_width(ui->screen_LVGL, 10, LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_arc_opa(ui->screen_LVGL, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_arc_color(ui->screen_LVGL, lv_color_hex(0x628fb5), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_color(ui->screen_LVGL, lv_color_hex(0x0EAFE0), LV_PART_INDICATOR|LV_STATE_DEFAULT);
 
 	//Write style for screen_LVGL, Part: LV_PART_KNOB, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen_LVGL, 0, LV_PART_KNOB|LV_STATE_DEFAULT);
@@ -664,7 +665,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_HttpServer, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_arc_width(ui->screen_HttpServer, 15, LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_arc_opa(ui->screen_HttpServer, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_arc_color(ui->screen_HttpServer, lv_color_hex(0x80a247), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_color(ui->screen_HttpServer, lv_color_hex(0x69CA00), LV_PART_INDICATOR|LV_STATE_DEFAULT);
 
 	//Write style for screen_HttpServer, Part: LV_PART_KNOB, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen_HttpServer, 0, LV_PART_KNOB|LV_STATE_DEFAULT);
@@ -698,7 +699,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_Idle, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_arc_width(ui->screen_Idle, 20, LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_arc_opa(ui->screen_Idle, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_arc_color(ui->screen_Idle, lv_color_hex(0xE0B74F), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_color(ui->screen_Idle, lv_color_hex(0xF9B500), LV_PART_INDICATOR|LV_STATE_DEFAULT);
 
 	//Write style for screen_Idle, Part: LV_PART_KNOB, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen_Idle, 0, LV_PART_KNOB|LV_STATE_DEFAULT);
@@ -974,7 +975,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_tittleLabel4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->screen_tittleLabel4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_tittleLabel4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->screen_tittleLabel4, lv_color_hex(0xe0b74f), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->screen_tittleLabel4, lv_color_hex(0xF9B500), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->screen_tittleLabel4, &lv_font_montserratMedium_20, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->screen_tittleLabel4, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->screen_tittleLabel4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -1012,7 +1013,7 @@ void setup_scr_screen(lv_ui *ui)
 	//Write style for screen_CounterArc, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_arc_width(ui->screen_CounterArc, 20, LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_arc_opa(ui->screen_CounterArc, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_arc_color(ui->screen_CounterArc, lv_color_hex(0x80A247), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_color(ui->screen_CounterArc, lv_color_hex(0x69CA00), LV_PART_INDICATOR|LV_STATE_DEFAULT);
 
 	//Write style for screen_CounterArc, Part: LV_PART_KNOB, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen_CounterArc, 0, LV_PART_KNOB|LV_STATE_DEFAULT);
@@ -1114,7 +1115,7 @@ void setup_scr_screen(lv_ui *ui)
 
 	//Write style for screen_BarIndicator, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen_BarIndicator, 129, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->screen_BarIndicator, lv_color_hex(0x2195f6), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->screen_BarIndicator, lv_color_hex(0x0EAFE0), LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_grad_dir(ui->screen_BarIndicator, LV_GRAD_DIR_VER, LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_grad_color(ui->screen_BarIndicator, lv_color_hex(0x000000), LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_BarIndicator, 6, LV_PART_INDICATOR|LV_STATE_DEFAULT);
@@ -1136,7 +1137,7 @@ void setup_scr_screen(lv_ui *ui)
 
 	//Write style for screen_SliderControl, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen_SliderControl, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->screen_SliderControl, lv_color_hex(0xE0B74F), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->screen_SliderControl, lv_color_hex(0xF9B500), LV_PART_INDICATOR|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->screen_SliderControl, 33, LV_PART_INDICATOR|LV_STATE_DEFAULT);
 
 	//Write style for screen_SliderControl, Part: LV_PART_KNOB, State: LV_STATE_DEFAULT.

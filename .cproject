@@ -407,7 +407,7 @@
 								<option id="com.crt.advproject.link.gcc.lto.1913724037" name="Enable Link-time optimization (-flto)" superClass="com.crt.advproject.link.gcc.lto" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.gcc.lto.optmization.level.459962518" name="Link-time optimization level" superClass="com.crt.advproject.link.gcc.lto.optmization.level" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.manage.1750991742" name="Manage linker script" superClass="com.crt.advproject.link.manage" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.script.1784095227" name="Linker script" superClass="com.crt.advproject.link.script" useByScannerDiscovery="false" value="dm-industrial-panel-frdm-mcxn947_Debug.ld" valueType="string"/>
+								<option id="com.crt.advproject.link.script.1784095227" name="Linker script" superClass="com.crt.advproject.link.script" useByScannerDiscovery="false" value="mcxn9xxevk_lvgl_industrial_panel_freertos_qspi_xip_Debug.ld" valueType="string"/>
 								<option id="com.crt.advproject.link.scriptdir.1497966021" name="Script path" superClass="com.crt.advproject.link.scriptdir" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.crpenable.848391240" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.crpenable" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.flashconfigenable.619634283" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.flashconfigenable" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -869,7 +869,7 @@
 								<option id="com.crt.advproject.link.gcc.lto.optmization.level.1666689453" name="Link-time optimization level" superClass="com.crt.advproject.link.gcc.lto.optmization.level"/>
 								<option id="com.crt.advproject.link.fpu.1495004544" name="Floating point" superClass="com.crt.advproject.link.fpu" value="com.crt.advproject.link.fpu.fpv5sp.hard" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.manage.1264486879" name="Manage linker script" superClass="com.crt.advproject.link.manage" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.script.1852892738" name="Linker script" superClass="com.crt.advproject.link.script" value="dm-industrial-panel-frdm-mcxn947_Release.ld" valueType="string"/>
+								<option id="com.crt.advproject.link.script.1852892738" name="Linker script" superClass="com.crt.advproject.link.script" value="mcxn9xxevk_lvgl_industrial_panel_freertos_qspi_xip_Release.ld" valueType="string"/>
 								<option id="com.crt.advproject.link.scriptdir.1863597659" name="Script path" superClass="com.crt.advproject.link.scriptdir" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.crpenable.1050563274" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.crpenable"/>
 								<option id="com.crt.advproject.link.flashconfigenable.459759431" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.flashconfigenable" value="true" valueType="boolean"/>

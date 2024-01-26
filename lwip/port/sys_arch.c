@@ -76,12 +76,12 @@ void sys_assert(const char *pcMessage)
 #ifdef LWIP_DEBUG
     LWIP_PLATFORM_DIAG((pcMessage));
 #endif
-#if !NO_SYS
+#if 0//!NO_SYS
     portENTER_CRITICAL();
 #endif
-    for (;;)
-    {
-    }
+//    for (;;)
+//    {
+//    }
 }
 
 /************************************************************************

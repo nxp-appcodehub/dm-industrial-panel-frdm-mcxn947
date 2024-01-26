@@ -63,6 +63,8 @@
 #include "custom.h"
 #include "fsl_p3t1755.h"
 #include "lcd_drv.h"
+#include "sensors.h"
+#include "gui_guider.h"
 #include "motor_control.h"
 /*******************************************************************************
  * Definitions

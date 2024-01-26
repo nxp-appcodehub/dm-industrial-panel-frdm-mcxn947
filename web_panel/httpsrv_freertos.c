@@ -301,28 +301,28 @@ int return_index_page(HTTPSRV_CGI_REQ_STRUCT *param)
 static int set_control_interface_window(HTTPSRV_CGI_REQ_STRUCT *param)
 {
 	set_actual_window(4);
-	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview4, false);
+	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview4, LV_ANIM_OFF);
 	return 0;
 }
 
 static int set_performance_window(HTTPSRV_CGI_REQ_STRUCT *param)
 {
 	set_actual_window(3);
-	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview3, false);
+	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview3, LV_ANIM_OFF);
 	return 0;
 }
 
 static int set_temperature_window(HTTPSRV_CGI_REQ_STRUCT *param)
 {
 	set_actual_window(2);
-	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview2, false);
+	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview2, LV_ANIM_OFF);
 	return 0;
 }
 
 static int set_touch_window(HTTPSRV_CGI_REQ_STRUCT *param)
 {
 	set_actual_window(1);
-	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview1, false);
+	lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview1, LV_ANIM_OFF);
 	return 0;
 }
 

@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include "lvgl.h"
 #include "lcd_drv.h"
+#include "sensors.h"
 
 extern lv_ui guider_ui;
 
@@ -28,7 +29,7 @@ static void screen_StationButton1_event_handler(lv_event_t *e)
 	case LV_EVENT_PRESSED:
 	{
 		set_actual_window(1);
-		lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview1, false);
+		lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview1, LV_ANIM_OFF);
 		//lv_obj_set_tile_id(guider_ui.screen_StationsView, 0, 0, true);
 	}
 		break;
@@ -45,7 +46,7 @@ static void screen_StationButton2_event_handler(lv_event_t *e)
 	case LV_EVENT_PRESSED:
 	{
 		set_actual_window(2);
-		lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview2, false);
+		lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview2, LV_ANIM_OFF);
 		//lv_obj_set_tile_id(guider_ui.screen_StationsView, 1, 0, true);
 	}
 		break;
@@ -62,7 +63,7 @@ static void screen_StationButton3_event_handler(lv_event_t *e)
 	case LV_EVENT_PRESSED:
 	{
 		set_actual_window(3);
-		lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview3, false);
+		lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview3, LV_ANIM_OFF);
 		//lv_obj_set_tile_id(guider_ui.screen_StationsView, 2, 0, true);
 	}
 		break;
@@ -79,7 +80,7 @@ static void screen_StationButton4_event_handler(lv_event_t *e)
 	case LV_EVENT_PRESSED:
 	{
 		set_actual_window(4);
-		lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview4, false);
+		lv_obj_set_tile(guider_ui.screen_StationsView, guider_ui.screen_StationsView_StationTileview4, LV_ANIM_OFF);
 		//lv_obj_set_tile_id(guider_ui.screen_StationsView, 3, 0, true);
 	}
 		break;

@@ -1,5 +1,5 @@
 /*
-* Copyright 2023 NXP
+* Copyright 2024 NXP
 * NXP Confidential and Proprietary. This software is owned or controlled by NXP and may only be used strictly in
 * accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
 * activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
@@ -14,15 +14,12 @@ extern "C" {
 #endif
 
 #include "lvgl.h"
-#include "lcd_drv.h"
-#include "sensors.h"
 
 typedef struct
 {
   
 	lv_obj_t *screen;
 	bool screen_del;
-	lv_obj_t *screen_img_1;
 	lv_obj_t *screen_Date;
 	lv_obj_t *screen_Clock;
 	lv_obj_t *screen_StationsView;
@@ -77,6 +74,7 @@ typedef struct
 	lv_obj_t *screen_StationButton3_label;
 	lv_obj_t *screen_StationButton4;
 	lv_obj_t *screen_StationButton4_label;
+	lv_obj_t *screen_img_2;
 }lv_ui;
 
 void ui_init_style(lv_style_t * style);
@@ -86,7 +84,6 @@ extern lv_ui guider_ui;
 
 void update_screen_values(lv_ui *ui);
 void setup_scr_screen(lv_ui *ui);
-LV_IMG_DECLARE(_Triangles175x175_alpha_100x100);
 LV_IMG_DECLARE(_Bullet3_alpha_10x10);
 LV_IMG_DECLARE(_Bullet1_alpha_10x10);
 LV_IMG_DECLARE(_Bullet4_alpha_10x10);
@@ -107,6 +104,7 @@ LV_IMG_DECLARE(_ControlC_alpha_50x50);
 LV_IMG_DECLARE(_ControlB_alpha_50x50);
 LV_IMG_DECLARE(_ControlC_alpha_50x50);
 LV_IMG_DECLARE(_ControlB_alpha_50x50);
+LV_IMG_DECLARE(_NXP_Logo_RGB_Colour_alpha_100x50);
 
 LV_FONT_DECLARE(lv_font_montserratMedium_14)
 LV_FONT_DECLARE(lv_font_montserratMedium_10)

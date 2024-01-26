@@ -242,7 +242,7 @@ svg {
   .http_perf {
 	position: fixed;
 	stroke-width: 15;  
-	stroke: #80A247; 
+	stroke: #69CA00; 
 	stroke-dasharray: 110, 330;
 	stroke-dashoffset: 110;
 	fill: none;
@@ -250,7 +250,7 @@ svg {
 
   .lvgl_perf {
 	stroke-width: 10; 
-	stroke: #7EAFD7;
+	stroke: #0EAFE0;
 	stroke-dasharray: 110, 330;
 	stroke-dashoffset: 220;
 	fill: none; 
@@ -307,7 +307,7 @@ svg {
 
 .touch_position {
 	stroke-width: 25; 
-	stroke: #7EAFD7; 
+	stroke: #0EAFE0; 
 	stroke-dasharray: 118, 353;
 	stroke-dashoffset: 235; 
 	stroke-Linecap: round;
@@ -387,7 +387,7 @@ svg {
 
 #counter_position {
 	stroke-width: 20; 
-	stroke: #80A247;
+	stroke: #69CA00;
 	stroke-Linecap: round;
 	stroke-dashoffset: calc(3.141*-25); 
 	fill: none; 
@@ -468,7 +468,7 @@ svg {
   .c_hand {
 	width: 100;
 	height: 6px;
-	background: #f7b02d;
+	background: #F9B500;
 	position: relative;
 	left: 80;
 	bottom: 122;
@@ -486,7 +486,7 @@ svg {
   .f_hand {
 	width: 100;
 	height: 6px;
-	background: #f7b02d;
+	background: #F9B500;
 	position: relative;
 	left: 250;
 	bottom: 126;
