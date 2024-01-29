@@ -10,3 +10,5 @@ Origin: 		NXP (BSD-3-clause)
 				lvgl (MIT) - https://github.com/lvgl/lvgl
 				FreeRTOS (MIT) - https://github.com/FreeRTOS
 				lodepng (zlib) - https://github.com/ldandeve/lodepng
+				Monserrat Font (OFT) - https://github.com/JulietaUla/Montserrat
+				DejaVu fonts (FREE) - https://dejavu-fonts.github.io/
