@@ -33,7 +33,7 @@ This demo demostrate capabilities of new FRDM-MCXN947. With only one core, demo 
 ## 2. Hardware<a name="step2"></a>
 - [FRDM-MCXN947.](https://www.nxp.com/products/processors-and-microcontrollers/arm-microcontrollers/general-purpose-mcus/mcx-arm-cortex-m/mcx-n94x-and-n54x-mcus-with-dual-core-arm-cortex-m33-eiq-neutron-npu-and-edgelock-secure-enclave-core-profile:MCX-N94X-N54X)   
 [<img src="Images/MCXN947.jpg" width="300"/>](Images/MCXN947.jpg)
-- [LCD-PAR-S035.](nxp.com/LCD-PAR-S035)    
+- [LCD-PAR-S035.](https://www.nxp.com/design/design-center/development-boards/3-5-480x320-ips-tft-lcd-module:LCD-PAR-S035)    
 [<img src="Images/LCDNXP.jpg" width="300"/>](Images/LCDNXP.jpg)
 - [FRDM-MC-LVPMSM.](https://www.nxp.com/design/design-center/development-boards/freedom-development-boards/mcu-boards/nxp-freedom-development-platform-for-low-voltage-3-phase-pmsm-motor-control:FRDM-MC-LVPMSM)
 - [FRDM-MC-LVMTR.](https://www.nxp.com/design/design-center/development-boards/freedom-development-boards/mcu-boards/low-voltage-3-phase-motor-for-frdm-platform:FRDM-MC-LVMTR)   
