@@ -17,7 +17,7 @@
     </nxp_compatible_hw>
     <nxp_ebh_hw>
 		<ebh id="nxp_lcd_par_s035"/>
-        <ebh id="nxp_frdm_mc_lvpmsm">
+        <ebh id="nxp_frdm_mc_lvpmsm"/>
     </nxp_ebh_hw>
     <peripherals>
         <peripheral name="adc"></peripheral>
