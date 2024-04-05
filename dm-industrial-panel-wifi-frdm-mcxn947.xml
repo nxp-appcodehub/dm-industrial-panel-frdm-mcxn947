@@ -1,0 +1,43 @@
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="dm-industrial-panel-wifi-frdm-mcxn947" type="demo" format="projectfile" versionSchema="1.0.0" name="Industrial Panel WiFi FRDM MCXN947">
+    <display_title>
+        Industrial Panel WiFi FRDM MCXN947
+    </display_title>
+    <overview>
+        <![CDATA[This demo demostrate capabilities of new FRDM-MCXN947. With only one core, demo runs motor control, lvgl, server interface, temperature sensor, touch sensitive and get core performance. Include two graphic interfaces, lcd screen and http server, both support interacion and contains same values. Graphic interface in lcd has four screens, that screens allows to watch core performance, microcontroler temperature, touch sensitive, manual counter and set rpm in motor. In http server has one page that shows all screens where can do and watch the same as the lcd. Server runs in 88MW320.]]>
+    </overview>
+    <toolchains>
+        <toolchain name="mcux"></toolchain>
+        <toolchain name="vscode"></toolchain>
+    </toolchains>
+    <families>
+        <family name="mcx"></family>
+    </families>
+    <nxp_compatible_hw>
+        <hw id="FRDM-MCXN947"></hw>
+    </nxp_compatible_hw>
+    <nxp_ebh_hw>
+        <ebh id="nxp_lcd_par_s035"></ebh>
+        <ebh id="nxp_frdm_mc_lvpmsm"></ebh>
+        <ebh id="murata_murata_mw320_module"></ebh>
+    </nxp_ebh_hw>
+    <peripherals>
+        <peripheral name="adc"></peripheral>
+        <peripheral name="clocks"></peripheral>
+        <peripheral name="dma"></peripheral>
+        <peripheral name="gpio"></peripheral>
+        <peripheral name="i2c"></peripheral>
+        <peripheral name="pwm"></peripheral>
+        <peripheral name="sdmmc"></peripheral>
+        <peripheral name="sensor"></peripheral>
+        <peripheral name="uart"></peripheral>
+        <peripheral name="sdio"></peripheral>
+    </peripherals>
+    <categories>
+        <category name="graphics"></category>
+        <category name="industrial"></category>
+        <category name="motor_control"></category>
+        <category name="rtos"></category>
+        <category name="sensor"></category>
+        <category name="touch_sensing"></category>
+    </categories>
+</data:item>

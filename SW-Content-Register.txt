@@ -1,0 +1,27 @@
+Release Name:           dm-industrial-panel-wifi-frdm-mcxn947
+Release Version:        1.0
+Outgoing License:       LA_OPT_NXP_Software_License v54 February 2024 - Additional Distribution License granted, license in Section 2.3 applies
+License in File:        Licence.txt
+Description:            This demo simulate an industrial panel with motor control, lvgl, temperature sensors, touch sensors, calculate cpu performance, wifi and use FreeRTOS.
+Release location:       https://github.com/nxp-appcodehub/dm-industrial-panel-wifi-frdm-mcxn947
+Origin:                 NXP (BSD-3-clause)
+                        NXP (Proprietary)
+                        NXP (MIT)
+                        ARM CMSIS (Apache-2.0)      - https://github.com/ARM-software/CMSIS_5/releases/tag/5.8.0      
+                        lvgl (MIT)                  - https://github.com/lvgl/lvgl
+                        Amazon FreeRTOS (MIT)       - https://github.com/FreeRTOS/FreeRTOS-Kernel
+                        lodepng (zlib)              - https://github.com/ldandeve/lodepng
+                        montserratMedium Font (OFT) - https://github.com/JulietaUla/Montserrat
+
+Component Name:	  industrial_panel_mw_320.bin
+Release version:  1.0
+Outgoing LIcense: LA_OPT_NXP_Software_License v54 February 2024 - Additional Distribution License granted, license in Section 2.3 applies
+license in files: license.txt
+description:      This is an industrial panel that runs in server, and have interactions with industrial panel in FRDM MCXN947
+release location: https://github.com/nxp-appcodehub/dm-industrial-panel-wifi-frdm-mcxn947/88mw320_binary
+Origin:  NXP (BSD-3-clause)
+         NXP (Proprietary)
+         ARM CMSIS (Apache-2.0)         - https://github.com/ARM-software/CMSIS_5/releases/tag/5.8.0
+         Amazon FreeRTOS (MIT)          - https://github.com/FreeRTOS/FreeRTOS-Kernel
+         lwIP (BSD-3-Clause)            - http://savannah.nongnu.org/projects/lwip
+         IETF sha/sha256 (BSD-3-Clause) - https://datatracker.ietf.org/doc/html/rfc6234

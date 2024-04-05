@@ -1,0 +1,377 @@
+<!DOCTYPE HTML SYSTEM>
+<html>
+
+<head>
+    <title>Industrial Panel HTTP Server Example</title>
+
+    <style type="text/css">
+    <!--
+    @import"httpsrv.css";
+    -->
+    </style>
+
+    <script type="text/javascript" src="request.js"></script>
+
+    <script type="text/javascript">
+        var server_performance      = 0.0;
+        var lvgl_performance        = 0.0;
+        var other_performance       = 0.0;
+        var idle_performance        = 0.0;
+        var server_performance_tens = 0.0;
+        var lvgl_performance_tens   = 0.0;
+        var other_performance_tens  = 0.0;
+        var idle_performance_tens   = 0.0;
+        var ext_temperature         = 0;
+        var int_temperature         = 0;
+        var electrode               = 0;
+        var rpm                     = 0;
+        var hours                   = 0;
+        var minutes                 = 0;
+        var seconds                 = 0;
+        var day                     = 0;
+        var month                   = 0;
+        var year                    = 0;
+        var meridian                = "pm";
+        var ext_temp_indicator      = 0;
+        var int_temp_indicator      = 0;
+        var data_received           = 0;
+        var on_lvgl_indicator       = 0;
+        var off_lvgl_indicator      = 0;
+        var offset_lvgl_indicator   = 0;
+        var on_server_indicator     = 0;
+        var off_server_indicator    = 0;
+        var offset_server_indicator = 0;
+        var on_other_indicator      = 0;
+        var off_other_indicator     = 0;
+        var offset_other_indicator  = 0;
+        var on_idle_indicator       = 0;
+        var off_idle_indicator      = 0;
+        var offset_idle_indicator   = 0;
+        var on_touch_indicator      = 0;
+        var off_touch_indicator     = 0;
+        var rpm_percent             = 0;
+        var rpm_slider              = 0;
+        var electrode_value         = 0;
+        var counter_value           = 0;
+        var on_counter_indicator    = 0;
+        var off_counter_indicator   = 0;
+        var actual_window           = 0;
+
+        var internal_temperature;
+        var external_temperature;
+
+        function string_to_int(buff)
+        {
+            var index;
+            var retval = 0;
+            var sign = 1;
+            for(character in buff)
+            {
+                if('-' == character)
+                {
+                    sign = 0;
+                }
+                else if('0' <= character && '9' >= character)
+                {
+                    retval *= 10;
+                    retval += character - 48;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            if(0 == sign)
+            {
+                retval *= -1;
+            }
+            return retval;
+        }
+
+        function parse_vars(data)
+        {
+            var parsed = data.split("\n");
+
+            server_performance      = parsed[0];
+            lvgl_performance        = parsed[1];
+            other_performance       = parsed[2];
+            idle_performance        = parsed[3];
+            server_performance_tens = parsed[4];
+            lvgl_performance_tens   = parsed[5];
+            other_performance_tens  = parsed[6];
+            idle_performance_tens   = parsed[7];
+            ext_temperature         = parsed[8];
+            int_temperature         = parsed[9];
+            electrode               = parsed[10];
+            rpm                     = parsed[11];
+            hours                   = parsed[12];
+            minutes                 = parsed[13];
+            seconds                 = parsed[14];
+            meridian                = parsed[15]
+            day                     = parsed[16];
+            month                   = parsed[17];
+            year                    = parsed[18];
+            ext_temp_indicator      = parsed[19];
+            int_temp_indicator      = parsed[20];
+            on_lvgl_indicator       = parsed[21];
+            off_lvgl_indicator      = parsed[22];
+            offset_lvgl_indicator   = parsed[23];
+            on_server_indicator     = parsed[24];
+            off_server_indicator    = parsed[25];
+            offset_server_indicator = parsed[26];
+            on_other_indicator      = parsed[27];
+            off_other_indicator     = parsed[28];
+            on_idle_indicator       = parsed[29];
+            off_idle_indicator      = parsed[30];
+            offset_idle_indicator   = parsed[31];
+            on_touch_indicator      = parsed[32];
+            off_touch_indicator     = parsed[33];
+            rpm_percent             = parsed[34];
+            rpm_slider              = parsed[35];
+            electrode_value         = parsed[36];
+            counter_value           = parsed[37];
+            on_counter_indicator    = parsed[38];
+            off_counter_indicator   = parsed[39];
+            actual_window           = parsed[40];
+
+            Lvgl_label.innerHTML                 = lvgl_performance + '.' + lvgl_performance_tens + '%';
+            Server_label.innerHTML               = server_performance + '.' + server_performance_tens + '%';
+            Other_label.innerHTML                = other_performance + '.' + other_performance_tens + '%';
+            Idle_label.innerHTML                 = idle_performance + '.' + idle_performance_tens + '%';
+            External_temperature_label.innerHTML = ext_temperature + 'C';
+            Internal_temperature_label.innerHTML = int_temperature + 'C';
+            Electrode_label.innerHTML            = electrode + '%';
+            bar_value.innerHTML                  = rpm + " rpm";     
+            hour.innerHTML                       = hours + ':' + minutes + ':' + seconds + ' ' + meridian;
+            date.innerHTML                       = day + '/' + month + '/' + year;
+            counter_val.innerHTML                = counter_value;
+            Electrode_value.innerHTML            = electrode_value;
+
+            other_perf_hand.style.strokeDasharray  = on_other_indicator + ',' + off_other_indicator;
+            idle_perf_hand.style.strokeDashoffset  = '-' + offset_idle_indicator;
+            idle_perf_hand.style.strokeDasharray   = on_idle_indicator + ',' + off_idle_indicator;
+            lvgl_perf_hand.style.strokeDashoffset  = '-' + offset_lvgl_indicator;
+            lvgl_perf_hand.style.strokeDasharray   = on_lvgl_indicator + ',' + off_lvgl_indicator;
+            http_perf_hand.style.strokeDashoffset  = '-' + offset_server_indicator;
+            http_perf_hand.style.strokeDasharray   = on_server_indicator + ',' + off_server_indicator;
+            counter_position.style.strokeDasharray = on_counter_indicator + ',' + off_counter_indicator;
+            
+            c_temp_hand.style.transform = 'rotate(' + int_temp_indicator + 'deg)';
+            f_temp_hand.style.transform = 'rotate(' + ext_temp_indicator + 'deg)';
+
+            v_progress_bar_hand.style.height = rpm_percent + '%';
+            h_progress_bar_hand.style.width  = rpm_slider  + 'px';
+            touch_position_hand.style.strokeDasharray = on_touch_indicator + ',' + off_touch_indicator;
+            slider_bar.value                 = rpm_percent;
+
+            if(actual_window == '1')
+            {
+                img_control.src = "ControlC.png";
+                img_tsi.src = "TouchB.png";
+                img_temp.src = "TempC.png";
+                img_cpu.src = "Station3c.png";
+            }
+            else if(actual_window == '2')
+            {
+                img_control.src = "ControlC.png";
+                img_tsi.src = "TouchC.png";
+                img_temp.src = "TempB.png";
+                img_cpu.src = "Station3c.png";
+            }
+            else if(actual_window == '3')
+            {
+                img_control.src = "ControlC.png";
+                img_tsi.src = "TouchC.png";
+                img_temp.src = "TempC.png";
+                img_cpu.src = "Station3b.png";
+            }
+            else if(actual_window == '4')
+            {
+                img_control.src = "ControlB.png";
+                img_tsi.src = "TouchC.png";
+                img_temp.src = "TempC.png";
+                img_cpu.src = "Station3c.png";
+            }
+        }
+
+        function loop()
+        {
+            if (!data_received)
+            {
+                 make_request("rtcdata.cgi");
+            }
+            setTimeout("loop()", 500);
+        }
+
+        function content_load(newUrl)
+        {
+            var objectEl = document.getElementById('content_frame');
+            objectEl.outerHTML = objectEl.outerHTML.replace(/src="(.+?)"/, 'src="' + newUrl + '"');
+        }
+		function autoResize(obj){
+			var newheight;
+			newheight=obj.contentWindow.document.body.scrollHeight+30;
+			if(newheight < 250) /* Control minimum height*/
+			{
+				newheight = 250;
+			}
+			obj.style.height= (newheight) + "px";
+		}
+		function heightReset(obj){
+			obj.style.height= "50%";
+		}
+        
+        window.onload = loop;
+    </script>
+
+</head>
+
+<body>
+
+    <div id="page_main" style="text-align: center;">
+
+        <div class="page_body">
+
+            <div class="grid-container">
+                <div class="item0">
+                    <a href="http://www.nxp.com" title="NXP"><img style="float: right; position:relative; bottom:25px; right:-50;" src="NXP_logo.png" alt="NXP Semiconductor" width="250px" height="125px"></a>
+                </div>
+                <div class="item1" style="font-size: 22px; font-family: Calibri;" onclick="CPU_click()"><img id="img_cpu" style="float: right;" src="Station3b.png" width="80px" height="80px"> CPU <br>Performance<br/>                    
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        /*Perimeter 440*/
+                        <circle id="lvgl_perf_hand"  class = "lvgl_perf" cx="130" cy="90"  r="70"/>
+                        <circle id="http_perf_hand"  class = "http_perf" cx="130" cy="90"  r="70"/>
+                        <circle id="idle_perf_hand"  class = "idle_perf" cx="130" cy="90"  r="70"/>
+                        <circle id="other_perf_hand" class = "other_perf" cx="130" cy="90"  r="70"/>
+                        <img id="BBullet" src="Bullet3.png" />
+                        <img id="GeBullet" src="Bullet2.png" />
+                        <img id="GrBullet" src="Bullet4.png" />
+                        <img id="OBullet" src="Bullet1.png" />
+                        <p style="color:whitesmoke; font-size:20px; position:relative; bottom:286; right:-270;"> LVGL:</p>
+                        <p id="Lvgl_label"; style="color:whitesmoke; font-size:20px; position:relative; bottom:330; right:-340;"> 00.0%</p>
+                        <p style="color:whitesmoke; font-size:20px; position:relative; bottom:345; right:-270;"> Server:</p>
+                        <p id="Server_label"; style="color:whitesmoke; font-size:20px; position:relative; bottom:389; right:-340;"> 00.0%</p>
+                        <p style="color:whitesmoke; font-size:20px; position:relative; bottom:402; right:-270;"> Other:</p>
+                        <p id="Other_label"; style="color:whitesmoke; font-size:20px; position:relative; bottom:446; right:-340;"> 00.0%</p>
+                        <p style="color:whitesmoke; font-size:20px; position:relative; bottom:461; right:-270;"> Idle:</p>
+                        <p id="Idle_label"; style="color:whitesmoke; font-size:20px; position:relative; bottom:505; right:-340;"> 00.0%</p>
+                    </svg>                      
+                </div>
+                <div class="item2" >
+                    <p id="date"; style="color:#aeabab; font-size:20px; position:relative; bottom:-40; right:-115;"> 09/15/2023</p>
+                    <p id="hour"; style="color:#aeabab; font-size:20px; position:relative; bottom:-60; right:-110;"> 03:35:00 pm</p>    
+                </div>
+
+                <div class="item4" style="font-size: 22px; font-family: Calibri" onclick="temp_click()"><img id="img_temp" style="float: right;" src="TempC.png" width="80px" height="80px"> Temperature <br>Sensor<br/>
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <circle id="c_temp_background"  cx="120" cy="60"  r="50"/> /*Perimeter 314.1592*/
+                        <circle id="f_temp_background"  cx="290" cy="60"  r="50"/>
+                        <circle id="c_temp_val"  cx="120" cy="60"  r="50"/>
+                        <circle id="f_temp_val"  cx="290" cy="60"  r="50"/>
+                        <circle id="c_temp_del"  cx="120" cy="60"  r="50"/>
+                        <circle id="f_temp_del"  cx="290" cy="60"  r="50"/>
+                        <div id="c_temp_hand" class="c_hand c_temp-hand"></div>
+                        <div id="f_temp_hand" class="f_hand f_temp-hand"></div>
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:112; right:-117;">0</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:143; right:-98;">10</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:182; right:-85;">20</p> 
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:225; right:-80;">30</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:270; right:-85;">40</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:308; right:-98;">50</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:338; right:-114;">60</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:360; right:-130;">70</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:374; right:-143;">80</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:381; right:-148;">90</p>  
+                        <p id="Internal_temperature_label"; style="color:#0EAFE0; font-size:22px; position:relative; bottom:395; right:-140;"> 90 C</p> 
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:431; right:-287;">0</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:462; right:-268;">10</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:501; right:-255;">20</p> 
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:544; right:-250;">30</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:589; right:-255;">40</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:627; right:-268;">50</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:657; right:-284;">60</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:679; right:-300;">70</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:693; right:-313;">80</p>  
+                        <p style="color:#F9B500; font-size:12px; position:relative; bottom:700; right:-318;">90</p>  
+                        <p id="External_temperature_label"; style="color:#0EAFE0; font-size:22px; position:relative; bottom:715; right:-310;"> 90 C</p>                               
+                    </svg> 
+                </div>
+                <div class="item5" style="font-size: 22px; font-family: Calibri" onclick="tsi_click()"><img id="img_tsi" style="float: right;" src="TouchC.png" width="80px" height="80px"> Touch Sensing <br>Input<br/>
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                            /*Perimeter = 471*/
+                            <circle id="touch_back" cx="130" cy="87"  r="75"/>
+                            <circle id="touch_position_hand" class = "touch_position" cx="130" cy="87"  r="75"/>
+                            <p id = "Electrode_label"; style="color:#0EAFE0; font-size:30px; position:relative; bottom:165; right:-108;"> 90%</p>
+                            <p style="color:whitesmoke; font-size:20px; position:relative; bottom:255; right:-290;"> Electrode 1</p>
+                            <p id = "Electrode_value" style="color:whitesmoke; font-size:20px; position:relative; bottom:265; right:-310;"> 45000</p>
+                    </svg> 
+                </div>
+                <div class="item3" style="font-size: 22px; font-family: Calibri" onclick="ControlInterface_click()"> <img id="img_control" style="float: right;" src="ControlC.png" width="80px" height="80px" > Control <br>Interface<br/>
+                    <div>
+                        <svg id="control_interface" xmlns="http://www.w3.org/2000/svg">
+                                <circle id="counter_back" cx="160" cy="270"  r="50"/>
+                                <circle id="counter_position" 	stroke-dasharray="calc(3.141*50), calc(3.141*50)"  cx="160" cy="270"  r="50"/>
+                        </svg> 
+                    </div>
+
+                    <div>
+                        <div><label id="counter_val" style="color:white; font-size:30px; position:relative; bottom:250; right:0;">000</label></div>
+                        <button id="decrement_button";   type="button" onclick="decrement_counter()">-</button>
+                        <button id="increment_button";   type="button" onclick="increment_counter()">+</button>
+                    </div>
+
+                    <div id = "h_background_bar">
+                        <form name="range_form" action="post.cgi" method="POST">
+                            <div><input type="range" name="slider" min="0" max="100" value="0" id="slider_bar"></div>
+                            <div id="h_progress_bar_hand" class="h_progress_bar"></div>
+                        </form>
+                    </div>
+
+                    <label id="bar_value" style="color:whitesmoke; font-size:30px; position:relative; bottom:600; right:0;">0000 rpm</label>
+                    <div id="v_background_bar">
+                        <div id="v_progress_bar_hand" class = "v_progress_bar"></div>
+                    </div>
+                    
+                </div>  
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript">
+
+            slider_bar.oninput = function(){
+                range_form.submit();
+            }
+
+            function decrement_counter(){
+                make_request('decrement.cgi');
+            }
+
+            function increment_counter(){
+                make_request('increment.cgi');
+            }
+
+            function ControlInterface_click(){
+                make_request('ctrl_interface.cgi');
+            }
+
+            function CPU_click(){
+                make_request('perf.cgi');
+            }
+
+            function temp_click(){
+                make_request('temp.cgi');
+            }
+
+            function tsi_click(){
+                make_request('touch.cgi');
+            }
+    
+    </script>
+
+
+</body>
+</html>		
