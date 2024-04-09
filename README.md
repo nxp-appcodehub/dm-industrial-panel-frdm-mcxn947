@@ -3,7 +3,15 @@
 
 ## Industrial Panel FRDM-MCXN947
 
-This demo demostrate capabilities of new FRDM-MCXN947. With only one core, demo runs motor control, lvgl, server, two temperature sensors, touch sensitive and get core performance. Include two graphic interfaces, lcd screen and http server, both support interacion and contains same values. Graphic interface in lcd has four screens, that screens allows to watch core performance, microcontroler temperature, board temperature, touch sensitive, manual counter and set rpm in motor. In http server has one page that shows all screens where can do and watch the same as the lcd.
+This demo demostrate capabilities of new FRDM-MCXN947.  
+There has some variants that are divided on branches in [Application Code Hub](https://github.com/nxp-appcodehub)     
+### Branches
+1. [main:](https://github.com/nxp-appcodehub/dm-industrial-panel-frdm-mcxn947.git)
+    Here Industrial panel runs with server using ethernet.
+2. [wifi:](https://github.com/nxp-appcodehub/dm-industrial-panel-frdm-mcxn947/tree/wifi)
+    In the other hand, There is Industrial panel with wifi. This use 88mw320 with web server, that has comunication with FRDM-MCXN947 that runs Industrial panel.
+### Demo   
+With only one core, demo runs motor control, lvgl, server, two temperature sensors, touch sensitive and get core performance. Include two graphic interfaces, lcd screen and http server, both support interacion and contains same values. Graphic interface in lcd has four screens, that screens allows to watch core performance, microcontroler temperature, board temperature, touch sensitive, manual counter and set rpm in motor. In http server has one page that shows all screens where can do and watch the same as the lcd.
 
 
 [<img src="Images/CPU_performance.PNG" width="300"/>](Images/CPU_performance.PNG) [<img src="Images/Temperature.PNG" width="300"/>](Images/Temperature.PNG)    
