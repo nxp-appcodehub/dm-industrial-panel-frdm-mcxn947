@@ -120,7 +120,6 @@ mikroe_status_t init_mikro_e_uart(mikroe_uart_config_t* uart_config)
 	PORT_SetPinConfig(MIKRO_E_RX_PORT, MIKRO_E_RX_PIN, &pin_config);
     CLOCK_SetClkDiv(kCLOCK_DivFlexcom5Clk, 1u);
     CLOCK_AttachClk(kFRO12M_to_FLEXCOMM5);
-    NVIC_SetPriority(MIKRO_E_INTERRPUT, 0);
 
 	if(true == uart_config->mikroe_uart_with_rtos)
 	{
@@ -141,6 +140,7 @@ mikroe_status_t init_mikro_e_uart(mikroe_uart_config_t* uart_config)
 		LPUART_Init(LPUART5, &lpuart_config, CLOCK_GetLPFlexCommClkFreq(MIKRO_E_FLEXCOMM));
 	    LPUART_EnableInterrupts(LPUART5, kLPUART_RxDataRegFullInterruptEnable);
 	    EnableIRQ(LP_FLEXCOMM5_IRQn);
+	    IRQ_SetPriority(LP_FLEXCOMM5_IRQn, 1);
 	}
 	return k_mikroe_success;
 }

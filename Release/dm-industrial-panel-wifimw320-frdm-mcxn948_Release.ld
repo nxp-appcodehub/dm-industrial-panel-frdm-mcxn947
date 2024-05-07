@@ -5,11 +5,11 @@
  * Generated linker script file for MCXN947
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.9.0 [Build 2144] [2024-01-05] on Apr 5, 2024, 1:06:43 PM
+ * MCUXpresso IDE v11.9.0 [Build 2144] [2024-01-05] on May 7, 2024, 11:22:35 AM
  */
 
-INCLUDE "dm-industrial-panel-wifi-frdm-mcxn947_Release_library.ld"
-INCLUDE "dm-industrial-panel-wifi-frdm-mcxn947_Release_memory.ld"
+INCLUDE "dm-industrial-panel-wifimw320-frdm-mcxn948_Release_library.ld"
+INCLUDE "dm-industrial-panel-wifimw320-frdm-mcxn948_Release_memory.ld"
 
 ENTRY(ResetISR)
 

@@ -235,7 +235,6 @@
 								<option id="com.crt.advproject.gcc.specs.763419356" name="Specs" superClass="com.crt.advproject.gcc.specs" useByScannerDiscovery="false" value="com.crt.advproject.gcc.specs.newlib" valueType="enumerated"/>
 								<option id="com.crt.advproject.gcc.config.709794439" name="Obsolete (Config)" superClass="com.crt.advproject.gcc.config" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gcc.store.276898795" name="Obsolete (Store)" superClass="com.crt.advproject.gcc.store" useByScannerDiscovery="false"/>
-								<option id="gnu.c.compiler.option.misc.otherExcludedFromScannerDiscovery.943064901" name="Other flags (excluded from discovery)" superClass="gnu.c.compiler.option.misc.otherExcludedFromScannerDiscovery" useByScannerDiscovery="false"/>
 								<inputType id="com.crt.advproject.compiler.input.915345643" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.exe.debug.907321437" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.debug">
@@ -292,7 +291,6 @@
 								<option id="com.crt.advproject.gas.specs.554358350" name="Specs" superClass="com.crt.advproject.gas.specs" useByScannerDiscovery="false" value="com.crt.advproject.gas.specs.newlib" valueType="enumerated"/>
 								<option id="com.crt.advproject.gas.config.1952361167" name="Obsolete (Config)" superClass="com.crt.advproject.gas.config" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gas.store.1863957591" name="Obsolete (Store)" superClass="com.crt.advproject.gas.store" useByScannerDiscovery="false"/>
-								<option id="com.crt.advproject.gas.exe.debug.option.debugging.other.831555280" name="Other debugging flags" superClass="com.crt.advproject.gas.exe.debug.option.debugging.other"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1938374653" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 								<inputType id="com.crt.advproject.assembler.input.1018876530" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
 							</tool>
@@ -410,7 +408,7 @@
 								<option id="com.crt.advproject.link.gcc.lto.1913724037" name="Enable Link-time optimization (-flto)" superClass="com.crt.advproject.link.gcc.lto" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.gcc.lto.optmization.level.459962518" name="Link-time optimization level" superClass="com.crt.advproject.link.gcc.lto.optmization.level" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.manage.1750991742" name="Manage linker script" superClass="com.crt.advproject.link.manage" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.script.1784095227" name="Linker script" superClass="com.crt.advproject.link.script" useByScannerDiscovery="false" value="&quot;dm-industrial-panel-wifi-frdm-mcxn947_Debug.ld&quot;" valueType="string"/>
+								<option id="com.crt.advproject.link.script.1784095227" name="Linker script" superClass="com.crt.advproject.link.script" useByScannerDiscovery="false" value="dm-industrial-panel-wifimw320-frdm-mcxn948_Debug.ld" valueType="string"/>
 								<option id="com.crt.advproject.link.scriptdir.1497966021" name="Script path" superClass="com.crt.advproject.link.scriptdir" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.crpenable.848391240" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.crpenable" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.flashconfigenable.619634283" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.flashconfigenable" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -698,8 +696,6 @@
 								<option id="com.crt.advproject.gcc.config.394002077" name="Obsolete (Config)" superClass="com.crt.advproject.gcc.config" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gcc.store.1642888607" name="Obsolete (Store)" superClass="com.crt.advproject.gcc.store" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gcc.exe.release.option.optimization.level.454551406" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.release.option.optimization.level" useByScannerDiscovery="true" value="gnu.c.optimization.level.none" valueType="enumerated"/>
-								<option id="com.crt.advproject.gcc.exe.release.option.debugging.level.1237462822" name="Debug Level" superClass="com.crt.advproject.gcc.exe.release.option.debugging.level" useByScannerDiscovery="false"/>
-								<option id="gnu.c.compiler.option.misc.otherExcludedFromScannerDiscovery.1586024864" name="Other flags (excluded from discovery)" superClass="gnu.c.compiler.option.misc.otherExcludedFromScannerDiscovery" useByScannerDiscovery="false"/>
 								<inputType id="com.crt.advproject.compiler.input.616941193" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.exe.release.1463225568" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.release">
@@ -755,8 +751,6 @@
 								<option id="com.crt.advproject.gas.specs.1104409008" name="Specs" superClass="com.crt.advproject.gas.specs" value="com.crt.advproject.gas.specs.newlib" valueType="enumerated"/>
 								<option id="com.crt.advproject.gas.config.1857575516" name="Obsolete (Config)" superClass="com.crt.advproject.gas.config"/>
 								<option id="com.crt.advproject.gas.store.1263799977" name="Obsolete (Store)" superClass="com.crt.advproject.gas.store"/>
-								<option id="com.crt.advproject.gas.debug.46372277" name="Debug level" superClass="com.crt.advproject.gas.debug"/>
-								<option id="com.crt.advproject.gas.option.debugging.other.781026646" name="Other debugging flags" superClass="com.crt.advproject.gas.option.debugging.other"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.759043435" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 								<inputType id="com.crt.advproject.assembler.input.557952469" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
 							</tool>
@@ -873,7 +867,7 @@
 								<option id="com.crt.advproject.link.gcc.lto.optmization.level.1666689453" name="Link-time optimization level" superClass="com.crt.advproject.link.gcc.lto.optmization.level"/>
 								<option id="com.crt.advproject.link.fpu.1495004544" name="Floating point" superClass="com.crt.advproject.link.fpu" value="com.crt.advproject.link.fpu.fpv5sp.hard" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.manage.1264486879" name="Manage linker script" superClass="com.crt.advproject.link.manage" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.script.1852892738" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;dm-industrial-panel-wifi-frdm-mcxn947_Release.ld&quot;" valueType="string"/>
+								<option id="com.crt.advproject.link.script.1852892738" name="Linker script" superClass="com.crt.advproject.link.script" value="dm-industrial-panel-wifimw320-frdm-mcxn948_Release.ld" valueType="string"/>
 								<option id="com.crt.advproject.link.scriptdir.1863597659" name="Script path" superClass="com.crt.advproject.link.scriptdir" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.crpenable.1050563274" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.crpenable"/>
 								<option id="com.crt.advproject.link.flashconfigenable.459759431" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.flashconfigenable" value="true" valueType="boolean"/>
@@ -903,7 +897,6 @@
 								<option id="com.crt.advproject.miscellaneous.pvHeapLimit.1219984592" name="Maximum extent of heap" superClass="com.crt.advproject.miscellaneous.pvHeapLimit"/>
 								<option id="com.crt.advproject.debugger.security.nonsecureimageenable.1506632570" name="Enable pre-programming of Non-Secure Image" superClass="com.crt.advproject.debugger.security.nonsecureimageenable"/>
 								<option id="com.crt.advproject.debugger.security.nonsecureimage.1628269340" name="Non-Secure Project" superClass="com.crt.advproject.debugger.security.nonsecureimage"/>
-								<option id="com.crt.advproject.linkserver.debug.prevent.release.683957967" name="Prevent Debugging" superClass="com.crt.advproject.linkserver.debug.prevent.release"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
