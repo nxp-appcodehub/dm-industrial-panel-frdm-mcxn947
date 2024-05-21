@@ -56,6 +56,7 @@ typedef struct _receive_data_t
 	uint16_t rpm;
 	uint8_t window;
 	uint8_t window_update;
+	uint8_t rpm_update;
 	uint8_t secure_char_2;
 } receive_data_t;
 
@@ -169,9 +170,9 @@ bool web_uart_interface_receive()
 
 			case k_Reading_State:
 				ready_buff[counter] = buff[index];
-				if(6 <= counter)
+				if(7 <= counter)
 				{
-					if(ready_buff[6] == '#')
+					if(ready_buff[7] == '#')
 					{
 						state = k_Finish_State;
 					}
@@ -212,7 +213,7 @@ bool web_uart_interface_receive()
 			}
 		}
 
-		if(previus_rpm != receive_data->rpm)
+		if(receive_data->rpm_update == 1 && previus_rpm != receive_data->rpm)
 		{
 			previus_rpm = receive_data->rpm;
 			set_rpm(receive_data->rpm);
