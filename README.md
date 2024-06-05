@@ -71,7 +71,7 @@ With only one core, demo runs motor control, lvgl, server, two temperature senso
 [<img src="Images/fold_pin_motor_control.PNG" width="300"/>](Images/fold_pin_motor_control.png)
 2. Connect the Motor cables to the motor control shield as the picture below. Motor sensors are not required for this demo.    
 [<img src="Images/motor_connection.PNG" width="200"/>](Images/motor_connection.PNG)
-3. Plugin the LCD-PAR-S025 board on J8. LCD-PAR-S025 has two extra rows that will not match with the J8 of the FRDM-MCXN947 board so make you it is connected properly as the picture below.   
+3. Plugin the LCD-PAR-S035 board on J8. LCD-PAR-S035 has two extra rows that will not match with the J8 of the FRDM-MCXN947 board so make you it is connected properly as the picture below.   
 [<img src="Images/lcd_connection.PNG" width="400"/>](Images/lcd_connection.PNG)
 4. Assembly the motor control shield on top of the FRDM-MCXN947.
 5. Plugin Ethernet (J16)  and USB type-C (J17) cables to the FRDM-MCXN947 board and connect the other sides to the host computer.
