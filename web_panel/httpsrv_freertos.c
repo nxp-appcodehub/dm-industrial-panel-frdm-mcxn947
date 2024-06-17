@@ -48,7 +48,92 @@
 #define ARC_SERVER_PERIMETER 440
 #define ARC_TOUCH_PERIMETER  471
 #define ARC_CNT_PERIMETER    314
-#define BUFF_SIZE 148
+
+#define SERVER_PERF_LEN				3
+#define LVGL_PERF_LEN   			3
+#define OTHER_PERF_LEN  			3
+#define IDLE_PERF_LEN				3
+#define SERVER_PERF_TENS_LEN 		2
+#define LVGL_PERF_TENS_LEN			2
+#define OTHER_PERF_TENS_LEN			2
+#define IDLE_PERF_TENS_LEN			2
+#define EXT_TEMPERATURE_LEN			3
+#define INT_TEMPERATURE_LEN			3
+#define ELECTRODE_LEN				4
+#define RPM_LEN						5
+#define HOURS_LEN					3
+#define MINUTES_LEN					3
+#define SECONDS_LEN					3
+#define MERIDIAN_LEN				3
+#define DAY_LEN						3
+#define MONTH_LEN					3
+#define YEAR_LEN					5
+#define EXT_TEMP_IND_LEN			5
+#define INT_TEPM_IND_LEN			5
+#define ON_LVGL_INDICATOR_LEN		4
+#define OFF_LVGL_INDICATOR_LEN		4
+#define OFFSET_LVGL_INDICATOR_LEN	4
+#define ON_SERVER_INDICATOR_LEN		4
+#define OFF_SERVER_INDICATOR_LEN	4
+#define OFFSET_SERVER_INDICATOR_LEN	4
+#define ON_OTHER_INDICATOR_LEN		4
+#define OFF_OTHER_INDICATOR_LEN		4
+#define ON_IDLE_INDICATOR_LEN		4
+#define OFF_IDLE_INDICATOR_LEN		4
+#define OFFSET_IDLE_INDICATOR_LEN	4
+#define ON_TOUCH_INDICATOR_LEN		4
+#define OFF_TOUCH_INDICATOR_LEN		4
+#define RPM_PERCENT_LEN				4
+#define RPM_SLIDER_LEN				4
+#define ELECTRODE_VALUE_LEN			6
+#define COUNTER_VALUE_LEN			4
+#define ON_COUNTER_INDICATOR_LEN	4
+#define OFF_COUNTER_INDICATOR_LEN	4
+#define ACTUAL_WINDOW_LEN			2
+
+const uint8_t offset_SERVER_PERF				= 0;
+const uint8_t offset_LVGL_PERF   			    = offset_SERVER_PERF			    + SERVER_PERF_LEN;
+const uint8_t offset_OTHER_PERF  			    = offset_LVGL_PERF   			    + LVGL_PERF_LEN;
+const uint8_t offset_IDLE_PERF				    = offset_OTHER_PERF  			    + OTHER_PERF_LEN;
+const uint8_t offset_SERVER_PERF_TENS 		    = offset_IDLE_PERF				    + IDLE_PERF_LEN;
+const uint8_t offset_LVGL_PERF_TENS			    = offset_SERVER_PERF_TENS 			+ SERVER_PERF_TENS_LEN;
+const uint8_t offset_OTHER_PERF_TENS			= offset_LVGL_PERF_TENS				+ LVGL_PERF_TENS_LEN;
+const uint8_t offset_IDLE_PERF_TENS			    = offset_OTHER_PERF_TENS			+ OTHER_PERF_TENS_LEN;
+const uint8_t offset_EXT_TEMPERATURE			= offset_IDLE_PERF_TENS				+ IDLE_PERF_TENS_LEN;
+const uint8_t offset_INT_TEMPERATURE			= offset_EXT_TEMPERATURE			+ EXT_TEMPERATURE_LEN;
+const uint8_t offset_ELECTRODE				    = offset_INT_TEMPERATURE		    + INT_TEMPERATURE_LEN;
+const uint8_t offset_RPM						= offset_ELECTRODE					+ ELECTRODE_LEN;
+const uint8_t offset_HOURS					    = offset_RPM					    + RPM_LEN;
+const uint8_t offset_MINUTES					= offset_HOURS						+ HOURS_LEN;
+const uint8_t offset_SECONDS					= offset_MINUTES					+ MINUTES_LEN;
+const uint8_t offset_MERIDIAN				    = offset_SECONDS				    + SECONDS_LEN;
+const uint8_t offset_DAY						= offset_MERIDIAN					+ MERIDIAN_LEN;
+const uint8_t offset_MONTH					    = offset_DAY					    + DAY_LEN;
+const uint8_t offset_YEAR					    = offset_MONTH					    + MONTH_LEN;
+const uint8_t offset_EXT_TEMP_IND			    = offset_YEAR					    + YEAR_LEN;
+const uint8_t offset_INT_TEPM_IND			    = offset_EXT_TEMP_IND			    + EXT_TEMP_IND_LEN;
+const uint8_t offset_ON_LVGL_INDICATOR		    = offset_INT_TEPM_IND			    + INT_TEPM_IND_LEN;
+const uint8_t offset_OFF_LVGL_INDICATOR		    = offset_ON_LVGL_INDICATOR			+ ON_LVGL_INDICATOR_LEN;
+const uint8_t offset_OFFSET_LVGL_INDICATOR	    = offset_OFF_LVGL_INDICATOR		    + OFF_LVGL_INDICATOR_LEN;
+const uint8_t offset_ON_SERVER_INDICATOR		= offset_OFFSET_LVGL_INDICATOR		+ OFFSET_LVGL_INDICATOR_LEN;
+const uint8_t offset_OFF_SERVER_INDICATOR	    = offset_ON_SERVER_INDICATOR	    + ON_SERVER_INDICATOR_LEN;
+const uint8_t offset_OFFSET_SERVER_INDICATOR	= offset_OFF_SERVER_INDICATOR		+ OFF_SERVER_INDICATOR_LEN;
+const uint8_t offset_ON_OTHER_INDICATOR		    = offset_OFFSET_SERVER_INDICATOR	+ OFFSET_SERVER_INDICATOR_LEN;
+const uint8_t offset_OFF_OTHER_INDICATOR		= offset_ON_OTHER_INDICATOR			+ ON_OTHER_INDICATOR_LEN;
+const uint8_t offset_ON_IDLE_INDICATOR		    = offset_OFF_OTHER_INDICATOR	    + OFF_OTHER_INDICATOR_LEN;
+const uint8_t offset_OFF_IDLE_INDICATOR		    = offset_ON_IDLE_INDICATOR			+ ON_IDLE_INDICATOR_LEN	;
+const uint8_t offset_OFFSET_IDLE_INDICATOR	    = offset_OFF_IDLE_INDICATOR		    + OFF_IDLE_INDICATOR_LEN;
+const uint8_t offset_ON_TOUCH_INDICATOR		    = offset_OFFSET_IDLE_INDICATOR      + OFFSET_IDLE_INDICATOR_LEN;
+const uint8_t offset_OFF_TOUCH_INDICATOR		= offset_ON_TOUCH_INDICATOR	        + ON_TOUCH_INDICATOR_LEN;
+const uint8_t offset_RPM_PERCENT				= offset_OFF_TOUCH_INDICATOR        + OFF_TOUCH_INDICATOR_LEN;
+const uint8_t offset_RPM_SLIDER				    = offset_RPM_PERCENT		        + RPM_PERCENT_LEN;
+const uint8_t offset_ELECTRODE_VALUE			= offset_RPM_SLIDER			        + RPM_SLIDER_LEN;
+const uint8_t offset_COUNTER_VALUE			    = offset_ELECTRODE_VALUE		    + ELECTRODE_VALUE_LEN;
+const uint8_t offset_ON_COUNTER_INDICATOR	    = offset_COUNTER_VALUE			    + COUNTER_VALUE_LEN;
+const uint8_t offset_OFF_COUNTER_INDICATOR	    = offset_ON_COUNTER_INDICATOR	    + ON_COUNTER_INDICATOR_LEN;
+const uint8_t offset_ACTUAL_WINDOW			    = offset_OFF_COUNTER_INDICATOR	    + OFF_COUNTER_INDICATOR_LEN;
+
+#define BUFF_SIZE 152
 
 /*******************************************************************************
  * Prototypes
@@ -146,23 +231,23 @@ void update_server_sensors()
 		if(true == sensors_state.update_mcu_temperature || true == sensors_state.update_ext_temperature)
 		{
 			temperature_data = get_temperature_data();
-		    int_to_string(temperature_data.external_temperature, (uint8_t*)g_buff+20,  2);
-		    int_to_string(temperature_data.internal_temperature, (uint8_t*)g_buff+23, 2);
-		    if(positive == int_to_string(3*temperature_data.external_temperature-90, (uint8_t*)g_buff+59, 3))
+		    int_to_string(temperature_data.external_temperature, (uint8_t*)g_buff+offset_EXT_TEMPERATURE,  2);
+		    int_to_string(temperature_data.internal_temperature, (uint8_t*)g_buff+offset_INT_TEMPERATURE, 2);
+		    if(positive == int_to_string(1.5*temperature_data.external_temperature-90, (uint8_t*)g_buff+offset_EXT_TEMP_IND+1, 3))
 		    {
-		    	g_buff[58] = '0';
+		    	g_buff[offset_EXT_TEMP_IND] = '0';
 		    }
 		    else
 		    {
-		    	g_buff[58] = '-';
+		    	g_buff[offset_EXT_TEMP_IND] = '-';
 		    }
-		    if(positive == int_to_string(3*temperature_data.internal_temperature-90, (uint8_t*)g_buff+64, 3))
+		    if(positive == int_to_string(1.5*temperature_data.internal_temperature-90, (uint8_t*)g_buff+offset_INT_TEPM_IND+1, 3))
 			{
-				g_buff[63] = '0';
+				g_buff[offset_INT_TEPM_IND] = '0';
 			}
 			else
 			{
-				g_buff[63] = '-';
+				g_buff[offset_INT_TEPM_IND] = '-';
 			}
 		}
 		// ------------------------------------------
@@ -177,19 +262,19 @@ void update_server_sensors()
 		    }
 		    if(12 <= rtc_data.hours)
 		    {
-		    	g_buff[44] = 'p';
+		    	g_buff[offset_MERIDIAN] = 'p';
 		    }
 		    else
 		    {
-		    	g_buff[44] = 'a';
+		    	g_buff[offset_MERIDIAN] = 'a';
 		    }
-		    int_to_string(rtc_data.hours, (uint8_t*)g_buff+35, 2);
-		    int_to_string(rtc_data.minutes, (uint8_t*)g_buff+38, 2);
-		    int_to_string(rtc_data.seconds, (uint8_t*)g_buff+41, 2);
+		    int_to_string(rtc_data.hours, (uint8_t*)g_buff+offset_HOURS, 2);
+		    int_to_string(rtc_data.minutes, (uint8_t*)g_buff+offset_MINUTES, 2);
+		    int_to_string(rtc_data.seconds, (uint8_t*)g_buff+offset_SECONDS, 2);
 
-		    int_to_string(rtc_data.day, (uint8_t*)g_buff+47, 2);
-		    int_to_string(rtc_data.month, (uint8_t*)g_buff+50, 2);
-		    int_to_string(rtc_data.year, (uint8_t*)g_buff+53, 4);
+		    int_to_string(rtc_data.day, (uint8_t*)g_buff+offset_DAY, 2);
+		    int_to_string(rtc_data.month, (uint8_t*)g_buff+offset_MONTH, 2);
+		    int_to_string(rtc_data.year, (uint8_t*)g_buff+offset_YEAR, 4);
 		}
 		// ------------------------------------------
 
@@ -198,13 +283,13 @@ void update_server_sensors()
 		{
 			performance_data = get_performance_data();
 		    int_to_string(performance_data.server_task_int,   (uint8_t*) g_buff,    2);
-		    int_to_string(performance_data.lvgl_task_int, (uint8_t*) g_buff+3,  2);
-		    int_to_string(performance_data.other_task_int,   (uint8_t*)g_buff+6,  2);
-		    int_to_string(performance_data.idle_task_int,    (uint8_t*)g_buff+9,  2);
-		    int_to_string(performance_data.server_task_tens,   (uint8_t*)g_buff+12, 1);
-		    int_to_string(performance_data.lvgl_task_tens, (uint8_t*)g_buff+14, 1);
-		    int_to_string(performance_data.other_task_tens,  (uint8_t*)g_buff+16, 1);
-		    int_to_string(performance_data.idle_task_tens,   (uint8_t*)g_buff+18, 1);
+		    int_to_string(performance_data.lvgl_task_int, (uint8_t*) g_buff+offset_LVGL_PERF,  2);
+		    int_to_string(performance_data.other_task_int,   (uint8_t*)g_buff+offset_OTHER_PERF,  2);
+		    int_to_string(performance_data.idle_task_int,    (uint8_t*)g_buff+offset_IDLE_PERF,  2);
+		    int_to_string(performance_data.server_task_tens,   (uint8_t*)g_buff+offset_SERVER_PERF_TENS, 1);
+		    int_to_string(performance_data.lvgl_task_tens, (uint8_t*)g_buff+offset_LVGL_PERF_TENS, 1);
+		    int_to_string(performance_data.other_task_tens,  (uint8_t*)g_buff+offset_OTHER_PERF_TENS, 1);
+		    int_to_string(performance_data.idle_task_tens,   (uint8_t*)g_buff+offset_IDLE_PERF_TENS, 1);
 
 		    other_server_arc_on = ARC_SERVER_PERIMETER*performance_data.other_task_int/100;
 		    other_server_arc_off = ARC_SERVER_PERIMETER - other_server_arc_on;
@@ -221,53 +306,53 @@ void update_server_sensors()
 		    http_server_arc_off = ARC_SERVER_PERIMETER - http_server_arc_on;
 		    http_server_arc_offset = lvgl_server_arc_on + lvgl_server_arc_offset;
 
-		    int_to_string(lvgl_server_arc_on,   (uint8_t*)g_buff+68, 3);
-		    int_to_string(lvgl_server_arc_off,   (uint8_t*)g_buff+72, 3);
-		    int_to_string(lvgl_server_arc_offset,   (uint8_t*)g_buff+76, 3);
+		    int_to_string(lvgl_server_arc_on,   (uint8_t*)g_buff+offset_ON_LVGL_INDICATOR, 3);
+		    int_to_string(lvgl_server_arc_off,   (uint8_t*)g_buff+offset_OFF_LVGL_INDICATOR, 3);
+		    int_to_string(lvgl_server_arc_offset,   (uint8_t*)g_buff+offset_OFFSET_LVGL_INDICATOR, 3);
 
-		    int_to_string(http_server_arc_on,   (uint8_t*)g_buff+80, 3);
-		    int_to_string(http_server_arc_off,   (uint8_t*)g_buff+84, 3);
-		    int_to_string(http_server_arc_offset,   (uint8_t*)g_buff+88, 3);
+		    int_to_string(http_server_arc_on,   (uint8_t*)g_buff+offset_ON_SERVER_INDICATOR, 3);
+		    int_to_string(http_server_arc_off,   (uint8_t*)g_buff+offset_OFF_SERVER_INDICATOR, 3);
+		    int_to_string(http_server_arc_offset,   (uint8_t*)g_buff+offset_OFFSET_SERVER_INDICATOR, 3);
 
-		    int_to_string(other_server_arc_on,   (uint8_t*)g_buff+92, 3);
-		    int_to_string(other_server_arc_off,   (uint8_t*)g_buff+96, 3);
+		    int_to_string(other_server_arc_on,   (uint8_t*)g_buff+offset_ON_OTHER_INDICATOR, 3);
+		    int_to_string(other_server_arc_off,   (uint8_t*)g_buff+offset_OFF_OTHER_INDICATOR, 3);
 
-		    int_to_string(idle_server_arc_on,   (uint8_t*)g_buff+100, 3);
-		    int_to_string(idle_server_arc_off,   (uint8_t*)g_buff+104, 3);
-		    int_to_string(idle_server_arc_offset,   (uint8_t*)g_buff+108, 3);
+		    int_to_string(idle_server_arc_on,   (uint8_t*)g_buff+offset_ON_IDLE_INDICATOR, 3);
+		    int_to_string(idle_server_arc_off,   (uint8_t*)g_buff+offset_OFF_IDLE_INDICATOR, 3);
+		    int_to_string(idle_server_arc_offset,   (uint8_t*)g_buff+offset_OFFSET_IDLE_INDICATOR, 3);
 		}
 		// ------------------------------------------
 
 	    // Rpm -------------------------------------------------
 		control_interface_values    = get_control_interface_data();
-	    int_to_string(control_interface_values.rpm, (uint8_t*)g_buff+30, 4);
+	    int_to_string(control_interface_values.rpm, (uint8_t*)g_buff+offset_RPM, 4);
 	    rpm_percentaje = control_interface_values.rpm/40;
 	    rpm_slider     = control_interface_values.rpm/20;
 	    counter        = control_interface_values.counter;
 	    counter_arc_on = ARC_CNT_PERIMETER * (uint16_t)counter / 100;
 	    counter_arc_off = ARC_CNT_PERIMETER - counter_arc_on;
 
-	    int_to_string(rpm_percentaje, (uint8_t*)g_buff+120, 3);
-	    int_to_string(rpm_slider, (uint8_t*)g_buff+124, 3);
-	    int_to_string(counter, (uint8_t*)g_buff+134, 3);
-	    int_to_string(counter_arc_on, (uint8_t*)g_buff+138, 3);
-	    int_to_string(counter_arc_off, (uint8_t*)g_buff+142, 3);
+	    int_to_string(rpm_percentaje, (uint8_t*)g_buff+offset_RPM_PERCENT, 3);
+	    int_to_string(rpm_slider, (uint8_t*)g_buff+offset_RPM_SLIDER, 3);
+	    int_to_string(counter, (uint8_t*)g_buff+offset_COUNTER_VALUE, 3);
+	    int_to_string(counter_arc_on, (uint8_t*)g_buff+offset_ON_COUNTER_INDICATOR, 3);
+	    int_to_string(counter_arc_off, (uint8_t*)g_buff+offset_OFF_COUNTER_INDICATOR, 3);
 	    // -----------------------------------------------------
 
 	    // Window ----------------------------------------------
-	    int_to_string(get_actual_window(), (uint8_t*)g_buff+146, 1);
+	    int_to_string(get_actual_window(), (uint8_t*)g_buff+offset_ACTUAL_WINDOW, 1);
 	    // -----------------------------------------------------
 
 		// Set touch --------------------------------
 		if(true == sensors_state.update_touch)
 		{
 			touch_sensitive_data = get_touch_sensitive_data();
-		    int_to_string(touch_sensitive_data.touch_sensitive_percentaje, (uint8_t*)g_buff+26, 3);
+		    int_to_string(touch_sensitive_data.touch_sensitive_percentaje, (uint8_t*)g_buff+offset_ELECTRODE, 3);
 		    touch_arc_on = ARC_TOUCH_PERIMETER*touch_sensitive_data.touch_sensitive_percentaje/200;
 		    touch_arc_off = ARC_TOUCH_PERIMETER - touch_arc_on;
-		    int_to_string(touch_arc_on, (uint8_t*)g_buff+112, 3);
-		    int_to_string(touch_arc_off, (uint8_t*)g_buff+116, 3);
-		    int_to_string(touch_sensitive_data.touch_sensitive_data, (uint8_t*)g_buff+128, 5);
+		    int_to_string(touch_arc_on, (uint8_t*)g_buff+offset_ON_TOUCH_INDICATOR, 3);
+		    int_to_string(touch_arc_off, (uint8_t*)g_buff+offset_OFF_TOUCH_INDICATOR, 3);
+		    int_to_string(touch_sensitive_data.touch_sensitive_data, (uint8_t*)g_buff+offset_ELECTRODE_VALUE, 5);
 		}
 		// ------------------------------------------
 	}
