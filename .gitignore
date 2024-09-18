@@ -1,32 +1,14 @@
+# Ignore jlink files
+*.jlink
+*.launch
 
-#Ignore thumbnails created by Windows
-Thumbs.db
-#Ignore files built by Visual Studio
-*.obj
-*.exe
-*.pdb
-*.user
-*.aps
-*.pch
-*.vspscc
-*_i.c
-*_p.c
-*.ncb
-*.suo
-*.tlb
-*.tlh
-*.bak
-*.cache
-*.ilk
-*.log
-[Bb]in
-*.lib
-*.sbr
-obj/
-_ReSharper*/
-[Tt]est[Rr]esult*
-.vs/
-#Nuget packages folder
-packages/
-/Debug/
-/Release/
+# Ignore gitignore
+*.gitignore
+
+# MCUXpresso settings folder
+.settings/
+
+# Ignore Debug and Release files except ld
+# Debug/
+# Release/
+!*.ld

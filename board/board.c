@@ -249,7 +249,7 @@ void BOARD_InitSensors(void)
 void BOARD_PowerMode_OD(void)
 {
     spc_active_mode_dcdc_option_t opt = {
-        .DCDCVoltage       = kSPC_DCDC_OverdriveVoltage,
+        .DCDCVoltage       = kSPC_DCDC_NormalVoltage,
         .DCDCDriveStrength = kSPC_DCDC_NormalDriveStrength,
     };
     SPC_SetActiveModeDCDCRegulatorConfig(SPC0, &opt);

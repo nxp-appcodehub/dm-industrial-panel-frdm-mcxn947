@@ -5,11 +5,11 @@
  * Generated linker script file for MCXN947
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.9.0 [Build 2144] [2024-01-05] on Sep 18, 2024, 3:44:48 PM
+ * MCUXpresso IDE v11.9.0 [Build 2144] [2024-01-05] on Sep 18, 2024, 3:42:59 PM
  */
 
-INCLUDE "dm-industrial-panel-frdm-mcxn947_Debug_library.ld"
-INCLUDE "dm-industrial-panel-frdm-mcxn947_Debug_memory.ld"
+INCLUDE "dm-industrial-panel-frdm-mcxn947_Release_library.ld"
+INCLUDE "dm-industrial-panel-frdm-mcxn947_Release_memory.ld"
 
 ENTRY(ResetISR)
 
@@ -331,7 +331,7 @@ KEEP (*(mcxn_flexspi_nor_config.o*))
         . += _HeapSize;
         . = ALIGN(4);
         _pvHeapLimit = .;
-    } > SRAMX
+    } > SRAM
 
      _StackSize = 0x1000;
      /* Reserve space in memory for Stack */
